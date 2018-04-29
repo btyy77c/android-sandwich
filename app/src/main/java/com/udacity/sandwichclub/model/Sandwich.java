@@ -1,6 +1,7 @@
 package com.udacity.sandwichclub.model;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Sandwich {
 
@@ -38,6 +39,11 @@ public class Sandwich {
         return alsoKnownAs;
     }
 
+    public String getAkaString() {
+        if (alsoKnownAs == null) return "";
+        return String.join(" , ", alsoKnownAs);
+    }
+
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
         this.alsoKnownAs = alsoKnownAs;
     }
@@ -72,5 +78,10 @@ public class Sandwich {
 
     public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public String getIngredientsString() {
+        if (ingredients == null) return "";
+        return String.join(" , ", ingredients);
     }
 }
